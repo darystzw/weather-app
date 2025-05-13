@@ -22,6 +22,7 @@ body{
 .search{
     width: 100%;
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: space-between;
 }
@@ -165,4 +166,25 @@ body{
 .yes-no label{
     color: #eee;
     cursor: pointer;
+}
+
+@media (max-width: 470px) {
+    .search input{
+        width: 70%;
+    }
+    .details{
+        overflow-y: auto;
+    }
+    .wind, .humidity{
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .descr{
+        font-size: 14px;
+        font-weight: 400h;
+    }
+    .details .col img{
+        width: 50px;
+        margin-right: 10px;
+    }
 }
