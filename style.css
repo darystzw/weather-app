@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'sans-serif';
+    box-sizing: border-box;
+}
+body{
+    background: #0f282f;
+}
+.card{
+    position: relative;
+    background: linear-gradient(180deg, #eee, #000);
+    max-width: 470px;
+    width: 90%;
+    color: #fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    display: none;
+    padding: 40px 35px;
+    text-align: center;
+}
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search input{
+    border: 0;
+    outline: 0;
+    background-color: #084d58;
+    color: #d7dcd5;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+
+}
+.search button{
+    border: 0;
+    outline: 0;
+    background-color: #084d58;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin: 2px;
+    cursor: pointer;
+}
+.search button img{
+    width: 26px;
+}
+.noValue{
+    padding-top: 20px;
+    color: #ff0000;
+    font-size: 20px;
+    text-shadow: #fff;
+    display: none;
+}
+.weather{
+    display: none;
+}
+.weatherIcon{
+    width: 210px;
+    margin-top: 20px;
+}
+.weather h1{
+    font-size: 65px;
+    font-weight: 500;
+}
+.weather h2{
+    font-size: 35px;
+    font-weight: 500;
+    color: #d7dcd5;
+}
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+.details .col{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+.details .col img{
+    width: 60px;
+    margin-right: 10px;
+}
+/* .details .col div{
+    margin-top: 20px;
+} */
+.details .col div p{
+    padding: 5px 0;
+}
+.wind, .humidity{
+    font-size: 30px;
+    font-weight: 500;
+}
+.descr{
+    font-size: 18px;
+    font-weight: 400h;
+}
+.popover {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 470px;
+    width: 90%;
+    padding: 20px;
+    background: linear-gradient(180deg, #33673f, #192236);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(83, 82, 82, 0.1);
+    z-index: 999;
+  }
+  
+  .choose p{
+    font-size: 23px;
+    color: #0a0908;
+    font-weight: 800;
+  }
+  .yes-no button{
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+    margin-top: 15px;
+    border-radius: 50%;
+    background: #050505;
+    border: none;
+  }
+  .yes-no {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  .yes-no label{
+    padding-right: 18px;
+    margin-top: 5px;
+    font-size: 18px;
+  }
+  .yes:hover{
+    background: #3cfc02;
+  }
+  .no:hover{
+    background: #fc0202;
+  }
+  .yes:hover,
+.no:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px rgba(209, 181, 181, 0.3);
+}
+.yes-no label{
+    color: #eee;
+    cursor: pointer;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet"/>
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter City Name..." spellcheck="false" class="cityName">
+            <button type="button" class="searchBtn"><img src="icons/search.png" alt="search icon"></button>
+        </div>
+        <p class="noValue">Please! Enter a City name</p>
+        <div class="weather">
+            <img src="icons/Clouds.png" alt="cloudy day" class="weatherIcon">
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">Harare</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="icons/weather.png" alt="humidity icon">
+                    <div>
+                        <p class="humidity">12%</p>
+                        <p class="descr">Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="icons/wind.png" alt="humidity icon">
+                    <div>
+                        <p class="wind">12 km/h</p>
+                        <p class="descr">Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popover" id="popover">
+        <div class="choose">
+            <p>Use your Current Location ⚲ to get weather</p>
+            <div class="yes-no">
+                <button type="button" class="yes">👍</button>
+                <label for="yes">Yes</label>
+            </div>
+            <div class="yes-no">
+                <button type="button" class="no">⛔</button>
+                <label for="no">No</label>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
