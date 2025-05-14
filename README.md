@@ -28,3 +28,7 @@ new weather app
             }*/
 
 // going to fix geopositioning to automatically capture weather using location 
+**feature was succesfully implemented
+
+// added an input suggestion api with mapbox, so now it can implement autocomplete
+
