@@ -10,6 +10,9 @@ const nullCity = document.querySelector('.noValue');
 const weatherIcon = document.querySelector('.weatherIcon');
 const card = document.querySelector('.card');
 
+const cityInput = document.querySelector('#cityInput');
+const suggestions = document.querySelector('#suggestions');
+
 const popover = document.querySelector('.popover');
 const locationYes = document.querySelector('.yes');
 const locationNo = document.querySelector('.no');
@@ -18,11 +21,46 @@ const htpp = new XMLHttpRequest();
 
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?`;
 const apiKey = `34975d3489843481b4a7a97179bcf3df`;
-
+const mapboxToken = 'pk.eyJ1IjoiZGFyeXN0enciLCJhIjoiY21hbnBnN2ZwMDE0ZzJwcjB2OWZzOXludyJ9.KiyIE3zN0g9QNwV9d3Ey7g';
 const hide = function(){
     weatherTab.style.display = 'none';
 }
 
+const getSuggestions = async ()=>{
+    const query = cityInput.value.trim();
+    if(query.length < 2){
+        suggestions.innerHTML = '';
+        suggestions.style.display = 'none';
+        return;
+    }
+
+    try{
+        const mapboxUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${mapboxToken}&types=place&autocomplete=true&limit=5`;
+        const response = await fetch(mapboxUrl);
+        var data = await response.json();
+
+        suggestions.innerHTML = '';
+        console.log(data);
+
+        data.features.forEach((feature) =>{
+            const li = document.createElement('li');
+            li.textContent = feature.place_name;
+            li.addEventListener('click', ()=>{
+                cityInput.value = feature.text;
+                suggestions.innerHTML = '';
+                suggestions.style.display = 'none';
+                checkweather();
+            });
+            suggestions.appendChild(li);
+        })
+        suggestions.style.display = 'block';
+    }
+    catch(error){
+        console.log('error fetching suggestions', error);
+        suggestions.innerHTML = '';
+        suggestions.style.display = 'none';
+    }
+}
 const checkweather = async function(){
     const cityName = city.value.trim();
     if(!cityName){
@@ -123,6 +161,9 @@ locationYes.addEventListener('click', ()=>{
 locationNo.addEventListener('click', ()=>{
     card.style.display = 'block';
     popover.style.display ='none';
+})
+cityInput.addEventListener('input', ()=>{
+    getSuggestions();
 })
 search.addEventListener('click', checkweather);
 city.addEventListener('keydown', (e)=>{

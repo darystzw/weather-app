@@ -9,8 +9,9 @@
 <body>
     <div class="card">
         <div class="search">
-            <input type="text" placeholder="Enter City Name..." spellcheck="false" class="cityName">
+            <input type="text" placeholder="Enter City Name..." spellcheck="false" class="cityName" id="cityInput" autocomplete="false">
             <button type="button" class="searchBtn"><img src="icons/search.png" alt="search icon"></button>
+            <ul id="suggestions" class="suggestions-list"></ul>
         </div>
         <p class="noValue">Please! Enter a City name</p>
         <div class="weather">
